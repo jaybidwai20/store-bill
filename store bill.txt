@@ -1,0 +1,44 @@
+#include <stdio.h>
+struct store
+{
+  int product_code;
+  char name[30];
+  int price;
+}s[50];
+
+int main(void) {
+  int n,k,j[50],bill=0;
+  printf("for how many items u have to store the data\n");
+  scanf("%d",&n);
+  for(int i=0;i<n;i++)
+  {
+    printf("enter the product code\n");
+    scanf("%d",&s[i].product_code);
+    printf("enter the name of product\n");
+    scanf("%s",s[i].name);
+    printf("enter the price of that product\n");
+    scanf("%d",&s[i].price);
+  }
+  for(int i=0;i<n;i++)
+  {
+    printf("product:%s\n",s[i].name);
+    printf("product code:%d\n",s[i].product_code);
+    printf("price:%d\n",s[i].price);
+  }
+  printf("how many products u want to buy\n");
+  scanf("%d",&k);
+  for(int i=0;i<k;i++)
+  {
+    printf("enter the product code\n");
+    scanf("%d",&j[i]);
+  }
+  for(int i=0;i<n;i++)
+  for(int e=0;e<k;e++)
+  {
+    if(j[e]==s[i].product_code)
+    {
+     bill=bill+s[i].price;
+    }
+  }
+printf("u have to pay amount %d rs",bill);
+}
